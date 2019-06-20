@@ -1,10 +1,10 @@
 terraform {
   backend "remote" {
     hostname = "app.terraform.io"
-    organization = "jschulman-demo"
+    organization = "jschulman"
 
     workspaces {
-      name = "sample-app"
+      name = "vcs-integration-app"
 
     }
   }
@@ -34,6 +34,6 @@ data "aws_ami" "ubuntu" {
         instance_type       =       "t2.micro"
 
         tags = {
-            Name = "Jon-Demo-App-New"
+            Name = "Jon-VCS-Demo-App"
         }
     }
