@@ -34,6 +34,7 @@ data "aws_ami" "ubuntu" {
         instance_type       =       "t2.micro"
 
         tags = {
-            Name = "Jon-VCS-Demo-App"
+            AppName = "Jon-VCS-Demo-App"
+	    CostCenter = "TFE-PM-000"	
         }
     }
