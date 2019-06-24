@@ -35,6 +35,7 @@ data "aws_ami" "ubuntu" {
 
         tags = {
             AppName = "Jon-VCS-Demo-App"
-	    CostCenter = "TFE-PM-000"	
+	        CostCenter = "TFE-PM-000"
+            AppOwner = "Jon"
         }
     }
