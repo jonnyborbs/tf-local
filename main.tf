@@ -1,14 +1,3 @@
-terraform {
-  backend "remote" {
-    hostname = "app.terraform.io"
-    organization = "jschulman"
-
-    workspaces {
-      name = "vcs-integration-app"
-
-    }
-  }
-}
 provider "aws" {
     version = "~> 2.0"
 }
@@ -32,10 +21,3 @@ data "aws_ami" "ubuntu" {
     resource "aws_instance" "web" {
         ami                 =       "${data.aws_ami.ubuntu.id}"
         instance_type       =       "t2.micro"
-
-        tags = {
-            AppName = "Jon-VCS-Demo-App"
-	        CostCenter = "TFE-PM-000"
-            AppOwner = "Jon"
-        }
-    }
