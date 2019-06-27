@@ -22,4 +22,5 @@ data "aws_ami" "ubuntu" {
         ami                     =       "${data.aws_ami.ubuntu.id}"
         instance_type           =       "t2.micro"
         key_name                =       "${var.key_pair_name}"
+        vpc_security_group_ids  =       ["${var.sg_id}"]
     }
