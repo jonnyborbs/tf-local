@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_security_group" "default" {
   name        = "TFAllowSSH"
   description = "Allow inbound SSH"
-  vpc_id      = "${aws_vpc.default.id}"
+  vpc_id      = "${var.vpc_id}"
 
   ingress {
     from_port   = 22
@@ -41,5 +41,5 @@ data "aws_ami" "ubuntu" {
         ami                     =       "${data.aws_ami.ubuntu.id}"
         instance_type           =       "t2.micro"
         key_name                =       "${var.key_pair_name}"
-        vpc_security_group_ids  =       ["${aws_vpc.default.id}"]
+        vpc_security_group_ids  =       ["${var.vpc_id}"]
     }
